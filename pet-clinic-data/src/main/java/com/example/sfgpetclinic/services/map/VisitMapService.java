@@ -3,11 +3,13 @@ package com.example.sfgpetclinic.services.map;
 
 import com.example.sfgpetclinic.model.Visit;
 import com.example.sfgpetclinic.services.VisitService;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Primary
 public class VisitMapService extends AbstratMapService<Visit,Long> implements VisitService {
     @Override
     public Set<Visit> findAll() {
