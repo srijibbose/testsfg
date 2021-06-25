@@ -6,11 +6,12 @@ import com.example.sfgpetclinic.services.OwnerService;
 import com.example.sfgpetclinic.services.PetService;
 import com.example.sfgpetclinic.services.PetTypeService;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 @Service
-@Primary
+@Profile({"default","map"})
 public class OwnerMapService extends AbstratMapService<Owner,Long> implements OwnerService {
 
     private final PetTypeService petTypeService;
@@ -38,6 +39,7 @@ public class OwnerMapService extends AbstratMapService<Owner,Long> implements Ow
 
     @Override
     public Owner save(Owner object) {
+        System.out.println("maaaaaaaaaapppppppp");
         if(object!=null){
             if(object.getPets()!=null){
                 object.getPets().forEach(pet->{
